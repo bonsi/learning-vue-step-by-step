@@ -8,19 +8,11 @@
 <body>
 
     <div id="app">
-        <form>
-            <span class="error" v-show="!message">
-                You must enter a message
-            </span>
 
-            <textarea v-model="message"></textarea>
+        <button type="submit" @click="count += 1">
+            Increment Counter: {{ count }}
+        </button>
 
-            <button type="submit" v-show="message">
-                Send Message
-            </button>
-        </form>
-
-        <pre>{{ $data | json }}</pre>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
@@ -29,7 +21,12 @@
         new Vue({
             el: '#app',
             data: {
-                message: ''
+                count: 0
+            },
+            methods: {
+                updateCount: function() {{
+                    this.count += 1;
+                }}
             }
         });
     </script>

@@ -7,3 +7,8 @@
 textarea {
     display: block;
 }
+
+#app  {
+    margin: 20% auto;
+    width: 10%;
+}
