@@ -1,0 +1,9 @@
+.error {
+    color: red;
+    font-style: italic;
+    display: block;
+}
+
+textarea {
+    display: block;
+}
