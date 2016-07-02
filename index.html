@@ -3,44 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Lesson</title>
-    <link rel="stylesheet" href="main.css">
 </head>
 <body>
 
-    <div id="app">
-        <counter subject="Likes"></counter>
-        <counter subject="Dislikes"></counter>
-    </div>
-
-    <template id="counter-template">
-        <h1>{{ subject }}</h1>
-        <button @click="count += 1">{{ count }}</button>
-    </template>
+    <h1>{{ fullName }}</h1>
+    <input type="text" v-model="first" placeholder="First Name">
+    <input type="text" v-model="last" placeholder="Last Name">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.js"></script>
 
     <script>
-//        Vue.component('counter', {
-//            template: '#counter-template',
-//
-//            props: ['subject'],
-//
-//            data: function() {
-//                return { count: 0 }
-//            }
-//        });
-
         new Vue({
-            el: '#app',
-            components: {
-                counter: {
-                    template: '#counter-template',
+            el: 'body',
 
-                    props: ['subject'],
+            data: {
+                first: 'Jeffrey',
+                last: 'Way',
+            },
 
-                    data: function() {
-                        return { count: 0 }
-                    }
+            computed: {
+                fullName: function() {
+                    return this.first + ' ' + this.last;
                 }
             }
         });
