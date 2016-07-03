@@ -1,0 +1,11 @@
+#app > div {
+    display: flex;
+    height: 30px;
+    align-items: center;
+}
+.Plan__name {
+    width: 120px;
+}
+.Plan__price {
+    width: 120px;
+}
